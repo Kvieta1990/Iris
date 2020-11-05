@@ -1,0 +1,92 @@
+Within the weak periodic potential approximation, the band gap is just the 
+direct result of the periodic potential. Using the perturbation theory, when
+the k value is located within the BZ, we have the corresponding correction for
+both the eigen states (wavefunctions) and the corresponding eigen value. As for
+the k point located at the BZ boundary, this corresponds to the situation where
+the eigen state is degenerate. From the perspective of mathematics, this 
+basically means the denominator of the correction terms for the wavefunction 
+becomes zero. In such situation, the method specially for dealing with the
+degenerate eigen state should be used, which then introduces the so-called 
+secular equation, leading to the solution for the eigen values at the BZ 
+boundary.
+
+Similarly and generally for any methods dealing with the band structure of 
+certain system, the energy eigen value varies as the function of k within the 
+BZ, which basically expands the originally discrete energy levels to energy
+band. For example, within the framework of tight binding model, the energy 
+eigen value can be written as the function of k, which is composed of three 
+terms - the initial discrete energy level, an integration term accounting for
+the contribution from the local atom and another integration term accounting
+for the contribution from all the nearest neighbour atoms. The result is that 
+the energy varies as the function of k, around the initial discrete energy 
+level. Furthermore, the variation of energy (as the function of k) is within
+certain range, which is determined by the property of the k-dependent function
+form. Then it is natural to understand the existence of band gap, since the two
+adjacent energy bands, where the energy eigen value for each band varies around
+the corresponding individual energy level, may not intersect in the energy 
+space, as shown in the following diagram:
+
+------------------------------
+------------------------------
+------------------------------
+******************************	->	The initial energy level-2
+------------------------------
+------------------------------
+------------------------------
+
+				->	The gap
+
+------------------------------
+------------------------------
+******************************	->	The initial energy level-1
+------------------------------
+------------------------------
+
+The same logic can transfer to DFT-based (or any other quantum electronic 
+structure computation methods) band structure calculation, since anyways it is 
+just the method to obtain the Hamiltonian of the system that differs among 
+various approaches including DFT, Hartree-Fock, etc. And the theoretical 
+foundation for the band structure is universal - the Bloch theorem. Specifically 
+for DFT calculation, the separation between different energy levels should be 
+promised by the orthogonality of the wavefunctions corresponding to different 
+energy band, which is required when calculating the band structure in k-space. 
+Again, the variation of certain energy band (i.e. the 1st, 2nd, etc. band) is
+finite within the 1st BZ, which promises the existence of band gap at the BZ 
+boundary.
+
+Final remarks:
+Once the charge density and the corresponding potential is obtained in the DFT 
+calculation, the corresponding Hamiltonian is available. Then comes the 
+questionis: isn't it straitforward to write the obtained Hamiltonian in matrix
+form with certain basis set and diagonalize the matrix to obtain the eigen 
+states and the corresponding energy eigen value? Why should we bother with 
+stepping the wavefunction coefficients (with the given basis set) as described 
+in the CASTEP tutorial about the calculation of band structure in CASTEP (see
+the link at the bottom of current document for the source of the corresponding
+material)? The answer is that the obtained Hamiltonian from DFT calculation
+usually cannot be diagonalized, therefore we have to step the wavefunction 
+coefficients (with the given basis set) to obtain the lowest energy value 
+corresponding to the given k point - the ground state. BTW, in the static 
+Shrodinger equation, given the Hamiltonian and the definite form of the 
+wavefunction (by specifying the coefficients with the given basis set), the only
+unknown in the Shrodinger equaiton is just the energy 'eigen value'. (the 
+quotation mark here means the obtained energy value in each step of the guessing
+- for the wavefucntion coefficients - and calculation does not correspond to the 
+real eigen value before reaching the energy minimum)
+
+The link for the material (CASTEP tutorial for the band structure calculation)
+which the current summary is based on:
+********************************************************************************
+
+Local link:
+/home/ai-peng/Dropbox/Documents/Research_General/Methodology/Simulations/DFT/
+Band_Structure/CASTEP_Band Structure Claculations_Short Theory Description.pdf
+
+Online link:
+http://cmt.dur.ac.uk/sjc/Castep_Lectures2/lecture12.PDF
+
+********************************************************************************
+
+Yuanpeng Zhang @ 22-Jul-2016
+School of Physics and Astronomy
+Queen Mary, University of London

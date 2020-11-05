@@ -1,0 +1,9 @@
+Topological insulator -> insulator inside but conductive on the surface -> Quantum Hall effect -> 
+Funny way of electron moving in the body (as circles) and on the surface (semicircles) to make the
+body insulating and surface conductive -> validate the time reversal symmetry -> thus we have to 
+take into account of the electron spins -> spin can be changed simutaneously either clockwise or
+counterclockwise in the quantum world -> thus inpurity cannot break the lining-up of the surface 
+spins -> free traveling electrons.
+
+PS: Electron spin -> complex vector space (see YouTube tutorial) -> spinor (see wikipedia) -> rotate 
+720 to return to where it was originally.

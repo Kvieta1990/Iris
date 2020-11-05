@@ -1,0 +1,59 @@
+!!! Symmetry_Mode_Reading_Notes
+    Each distortion subspace should has its own basis vectors. Then the operating of group elements on one of the basis vectors can be expressed as the linear combination of the basis vectors. Therefore for a single operator belonging to the group, when it operates on the basis vectors one-by-one and if we write down such operations and linear combination in a compact form, it just looks like the following matrix form:
+       
+    ┍g • phi_1┑    ┍D_11 D_12 ... D_1n┑┍phi_1┑
+    │g • phi_2│    │D_21 D_22 ... D_2n││phi_2│
+    │g • phi_3│ =  │D_31 D_32 ... D_3n││phi_3│
+    │g •  ... │    │...  ...  ... ... ││ ... │
+    ┕g • phi_n┙    ┕D_n1 D_n2 ... D_nn┙┕phi_n┙
+    
+    Furthermore it can be shown that the matrix D satisfies the same multiplication table with the group elements g. Then D naturally becomes the representation of the group G. Following this, we could further have the irreducible representations (IRs). Here it should be noticed that certain representation corresponds to certain distortion subspace (for which we could specify the basis vectors), i.e. as shown above, selecting the basis vectors -> express the operating of group elements as the linear combination -> brings in the representation matrix. So now it should be kept in mind that every time we talk about a specific distortion subspace, there should be an IR popping up in our mind that is associated with the distortion subspace in question, i.e. IR <=> distortion subspace.
+    
+    Anytime when we have a distortion vector, or a distortion subspace, another idea that should pop up in our mind is the lowering of the symmetry, since by applying a distortion vector to the crystal, we are indeed somehow distorting the structure so that we may lose some of the symmetry that is possessed by the structure before the distortion. The symmetry elements possessed by the new structure (after the distortion) form the subgroup (in the sense of displacive phase transition or symmetry breaking). Then with respect to the symmetry breaking, we can trace back from the subgroup to the distortion space to find out which distortion vectors bring the original structure (before the distortion) to the structure with the lower symmetry (after the distortion). By doing this, we are dividing each of the distortion subspaces into smaller pieces. The criterion of such division is just that all the vectors in the 'smaller piece' is invariant under the transformation of all elements belonging to the subgroup.
+    
+    
+                               ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┑
+    ┍━━━━━━━━━━━━┑             │  -------------------  -------------------  -------------------       │
+    │   IRREPs   │             │  | IRREPT MATRIX-1 |  | IRREPT MATRIX-2 |  | IRREPT MATRIX-3 |  ...  │
+    ┕━━━━━━━━━━━━┙             │  -------------------  -------------------  -------------------       │
+                               ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┙
+                               
+                                        /\                    /\                    /\
+                                        ||                    ||                    ||
+                               
+                               ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┑
+    ┍━━━━━━━━━━━━━┑            │      ---------            ---------             ---------            │
+    │  Subspaces  │            │      | Sub-1 |            | Sub-2 |             | Sub-3 |       ...  │
+    ┕━━━━━━━━━━━━━┙            │      ---------            ---------             ---------            │
+                               ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┙
+                                    
+                                                              /\
+                                                              ||
+                               
+                               ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┑
+    ┍━━━━━━━━━━━━━┑            │  ---------------       ---------------        ---------------        │
+    │    Group    │            │  | Operation-1 |       | Operation-2 |        | Operation-3 |   ...  │
+    ┕━━━━━━━━━━━━━┙            │  ---------------       ---------------        ---------------        │
+                               ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┙
+    
+    
+    The whole group, through operating on certain subspaces, will map to certain IRREP that corresponds to certain subspace. Also, it should be mentioned again that there is a one-to-one correspondence between the subspace and the IRREP.
+    
+    How the distortion vectors belonging to certain distortion subspace transforms under the operation of group elements is just like how the linear combination coefficients vectors transform under the operation of matrices of certain representation, as demonstrated below:
+    
+    ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┑
+    │ g ⊗ distortion vector <=> IRREP matrix ⊗ Linear combination coefficients vector │
+    ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┙
+    
+    This is what is meant by "transform as IRREP". In group theory language, it says "they follow the same multiplication table", and "they" refers to the group elements and the IRREP matrices that the group elements transform as or transform like.
+    
+    Yuanpeng Zhang @ Fri 05 Oct 2018 05:26:16 PM EDT
+    SNS, ORNL
+    
+    Isotropy subgroup work flow:
+    
+    Given a group -> Find IRs (already standardized) -> Vectors in representation space and the corresponding group elements that leave the vectors invariant (i.e. isotropy subgroups) -> specify atomic positions -> find subspaces associated with IRs.
+    
+    Yuanpeng @ Tue 23 Oct 2018 09:14:15 PM EDT
+    SNS, ORNL
+    
